@@ -17,7 +17,7 @@ import lombok.ToString;
 
 
 @Entity(name="tabelacomanda")
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 @NoArgsConstructor
 public class Comanda {
@@ -30,28 +30,31 @@ public class Comanda {
 	private Long id;
 	
 	@Getter
-	@Setter
+	// @Setter
 	@Column
 	@Transient
 	private Cliente cliente;
 	
 	@Getter
 	@Setter
+	@EqualsAndHashCode.Include
 	@Column(name="nr_mesa")
 	private int numeroMesa;
 	
 	@Getter
 	@Setter
+	@EqualsAndHashCode.Include
 	@Column(name="dt_abertura")
 	private Date dataHoraAbertura;
 	
 	@Getter
 	@Setter
+	@EqualsAndHashCode.Include
 	@Column(name="dt_fechamento")
 	private Date dataHoraFechamento;
 	
 	@Getter
-	@Setter
+	//@Setter
 	@Column(name="pedidos")
 	@Transient
 	private List<Pedido> pedidos;
