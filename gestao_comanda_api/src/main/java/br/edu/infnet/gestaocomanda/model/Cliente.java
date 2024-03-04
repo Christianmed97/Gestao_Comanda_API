@@ -25,6 +25,9 @@ public class Cliente {
 	private List<Comanda> comandas;
 	
 	
+	
+	
+	
 
 
 }
