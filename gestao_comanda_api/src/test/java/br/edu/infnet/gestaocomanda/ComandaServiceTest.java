@@ -2,10 +2,12 @@ package br.edu.infnet.gestaocomanda;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,15 +49,41 @@ class ComandaServiceTest {
 	void testaSaveComanda() {
 			
 		this.comanda = new Comanda();
-		Optional<List<Comanda>> optionalDeComandas = this.comandaService.findAll();
-			
-		if (!optionalDeComandas.isEmpty()) {
-			List<Comanda> listaDeComandas = optionalDeComandas.get();
+		Optional<List<Comanda>> optionalDeComandas = null;
 		
-			assertTrue(listaDeComandas.contains(this.comanda));
-				
-		} 
+		Comanda comanda2 = new Comanda();
+		
+		
+		try {
+			SimpleDateFormat dataPTBR2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			comanda2.setDataHoraAbertura(dataPTBR2.parse("30/03/2024 20:30:00"));
+			comanda2.setDataHoraFechamento(dataPTBR2.parse("30/03/2024 22:50:00"));
+			comanda2.setNumeroMesa(32);
+			Comanda comandaSalva = comandaService.save(comanda);
+			optionalDeComandas = comandaService.findAll();
+			
+			
+			if (!optionalDeComandas.isEmpty()) {
+				List<Comanda> listaDeComandas = optionalDeComandas.get();	
+	
+				assertTrue(listaDeComandas.contains(comanda));
+						
+					
+			} else {
+				// verificar depois
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+			
+		
+		
+		
 		
 	}
+	
+	
+	
 
 }

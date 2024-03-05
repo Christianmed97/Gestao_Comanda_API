@@ -16,7 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 
-@Entity(name="tabelacomanda")
+@Entity(name="t_comanda")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 @NoArgsConstructor
