@@ -23,6 +23,7 @@ public class Cliente {
 	private String nome;
 	private EmailVO email;
 	private List<Comanda> comandas;
+	private boolean ativo;
 	
 	
 
