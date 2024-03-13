@@ -2,6 +2,7 @@ package br.edu.infnet.gestaocomanda.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,14 +23,13 @@ import lombok.ToString;
 
 @EqualsAndHashCode
 @ToString
-@NoArgsConstructor
 @Entity
 public class Comanda {
+	
 	@Getter
 	@Setter
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private UUID id;
 	
 	@Getter
 	@Setter
@@ -53,5 +53,9 @@ public class Comanda {
 	@Setter
 	@Transient
 	private List<Pedido> pedidos;
+	
+	public Comanda() {
+		this.id=UUID.randomUUID();
+	}
 
 }

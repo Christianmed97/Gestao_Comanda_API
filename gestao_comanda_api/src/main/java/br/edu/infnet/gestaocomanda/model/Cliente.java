@@ -2,6 +2,8 @@ package br.edu.infnet.gestaocomanda.model;
 
 import br.edu.infnet.gestaocomanda.model.vo.EmailVO;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -28,10 +30,10 @@ public class Cliente {
 	@JoinColumn(name="comanda_id")
 	private Comanda comanda;
 	
-	@Transient
+	@Enumerated(EnumType.STRING)
 	private TipoCLienteEnum tipoCliente;
 	
-	@Transient
+	@Enumerated(EnumType.STRING)
 	private TipoSexoEnum sexo;
 	
 	private String nome;

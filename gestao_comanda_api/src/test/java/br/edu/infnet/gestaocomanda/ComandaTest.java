@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.hibernate.internal.build.AllowSysOut;
 import org.junit.jupiter.api.BeforeAll;
@@ -16,6 +17,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.edu.infnet.gestaocomanda.model.Cliente;
 import br.edu.infnet.gestaocomanda.model.Comanda;
+import br.edu.infnet.gestaocomanda.model.TipoCLienteEnum;
+import br.edu.infnet.gestaocomanda.model.TipoSexoEnum;
 import br.edu.infnet.gestaocomanda.service.ClienteService;
 import br.edu.infnet.gestaocomanda.service.ComandaService;
 
@@ -55,13 +58,15 @@ class ComandaTest {
 		this.cliente=new Cliente();
 		this.comanda = new Comanda();
 		cliente.setCpfCnpj("1111121111211");
+		cliente.setSexo(TipoSexoEnum.MASCULINO);
+		cliente.setTipoCliente(TipoCLienteEnum.PESSOA_FISICA);
 		try {
 			Cliente clienteSalvo=clienteService.salvar(cliente);
 			comanda.setCliente(clienteSalvo);
 			comandaService.salvar(comanda);
-			Comanda comanda2= comandaService.pesquisarPorId(1L).get();
+			Comanda comanda2= comandaService.pesquisarPorId(comanda.getId()).get();
 			System.out.println(comanda2);
-			assertEquals("1111121111211", comanda2.getCliente().getCpfCnpj());
+			assertEquals(TipoSexoEnum.MASCULINO, comanda2.getCliente().getSexo());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

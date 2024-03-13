@@ -2,6 +2,7 @@ package br.edu.infnet.gestaocomanda.service.impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -44,7 +45,7 @@ public class ComandaServiceImpl implements ComandaService {
 	}
 	
 	@Override
-	public Optional<Comanda> pesquisarPorId(Long id) {
+	public Optional<Comanda> pesquisarPorId(UUID id) {
 		return comandaRepository.findById(id);
 	}
 	
