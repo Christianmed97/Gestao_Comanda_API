@@ -1,12 +1,10 @@
 package br.edu.infnet.gestaocomanda.model;
 
-import java.util.List;
-
-
-
 import br.edu.infnet.gestaocomanda.model.vo.EmailVO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Transient;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,19 +22,25 @@ import lombok.ToString;
 public class Cliente {
 	
 	@Id
-	private String cpfCnpj; 
+	private String cpfCnpj;
+	
+	@OneToOne
+	@JoinColumn(name="comanda_id")
+	private Comanda comanda;
+	
 	@Transient
 	private TipoCLienteEnum tipoCliente;
+	
 	@Transient
 	private TipoSexoEnum sexo;
+	
 	private String nome;
+	
 	@Transient
 	private EmailVO email;
-	@Transient
-	private List<Comanda> comandas;
+	
 	private boolean ativo;
 	
 	
-
-
+	
 }
