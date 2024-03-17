@@ -15,5 +15,5 @@ public interface ComandaService {
 	
 	public Optional<List<Comanda>> pesquisarTodos();
 
-	public Optional<Comanda> pesquisarPorId(UUID id);
+	public Optional<Comanda> pesquisarPorId(Long id);
 }

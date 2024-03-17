@@ -45,7 +45,7 @@ public class ComandaServiceImpl implements ComandaService {
 	}
 	
 	@Override
-	public Optional<Comanda> pesquisarPorId(UUID id) {
+	public Optional<Comanda> pesquisarPorId(Long id) {
 		return comandaRepository.findById(id);
 	}
 	
