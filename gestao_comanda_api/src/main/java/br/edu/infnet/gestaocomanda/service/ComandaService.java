@@ -10,10 +10,11 @@ public interface ComandaService {
 
 	
 	public Comanda salvar (Comanda comanda)throws Exception ;
+		
+	public Optional<List<Comanda>> pesquisarTodos();
 	
 	public Comanda atualizar(Comanda comanda)throws Exception;
 	
-	public Optional<List<Comanda>> pesquisarTodos();
-
 	public Optional<Comanda> pesquisarPorId(Long id);
+
 }

@@ -27,7 +27,7 @@ public abstract class Produto {
 	@Setter
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int codigo;
+	private Long codigo;
 	
 	@Getter
 	@Setter
