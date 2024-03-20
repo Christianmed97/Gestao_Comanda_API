@@ -1,15 +1,10 @@
 package br.edu.infnet.gestaocomanda.repository;
 
-import java.util.UUID;
-
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.edu.infnet.gestaocomanda.model.Comanda;
+import br.edu.infnet.gestaocomanda.model.Refeicao;
 @Repository
-public interface ComandaRepository extends JpaRepository<Comanda, Long> {
+public interface RefeicaoRepository extends JpaRepository<Refeicao,Long> {
 
-	
-	
 }
