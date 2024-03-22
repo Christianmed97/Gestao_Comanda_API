@@ -1,38 +1,24 @@
 package br.edu.infnet.gestaocomanda.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import br.edu.infnet.gestaocomanda.model.Cliente;
 
 
 @Controller
+@RequestMapping("/cliente")
 public class ClienteController {
 	
-	public Cliente salvar (Cliente cliente) {
-		return null;
+	@GetMapping("/cadastrar")
+	public String cliente() {
+		return "cliente/frm-cliente";
 	}
 	
-	public Cliente atualizar(Cliente cliente) {
-		return null;
-	}
-	
-	public void desabilitar(String cpfCnpj) {
-		
-	}
-	
-	public void habilitar(String cpfCnpj) {
-		
-	}
-	
-	private Optional<List<Cliente>> pesquisarTodos() {
-		return Optional.empty();
-		
-	}
-	
-	private Optional<Cliente> pesquisarPorCpfCnpj(){
-		return Optional.empty();
-	}
 	
 
 }
