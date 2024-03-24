@@ -32,14 +32,15 @@
 		<!-- Navbar -->
 		<div th:replace="components/navbar.html"></div>
 		<div class="container-fluid">
-			<form>
+			<form  role="form" action="#" th:method="post" th:action="@{cadastrar}"
+                          th:object="${cliente}">
 				<div class="container align-bottom">
 					<div class="row">
 						<div class="col-12">
 
 							<div class="mb-3">
 								<label for="nome" class="form-label">Nome:</label>
-								<input type="email" class="form-control" id="nome" aria-describedby="emailHelp">
+								<input type="text" class="form-control" id="nome" aria-describedby="emailHelp" th:required="required" th:field="*{nome}">
 							</div>
 						</div>
 					</div>
@@ -47,7 +48,7 @@
 						<div class="col-12">
 							<div class="mb-3">
 								<label for="cpf/cnpj" class="form-label">CPF/CNPJ:</label>
-								<input type="email" class="form-control" id="cpf/cnpj" aria-describedby="emailHelp">
+								<input type="text" class="form-control" id="cpf/cnpj" aria-describedby="emailHelp" th:required="required" th:field="*{cpfCnpj}">
 							</div>
 						</div>
 					</div>
@@ -55,7 +56,7 @@
 						<div class="col-12">
 							<div class="mb-3">
 								<label for="email" class="form-label">Email:</label>
-								<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+								<input type="email" class="form-control" id="email" aria-describedby="emailHelp" th:required="required" th:field="*{email}">
 							</div>
 						</div>
 					</div>
@@ -64,11 +65,11 @@
 
 							<label for="sexo" class="form-label">Sexo:</label>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="sexo" id="sexo">
+								<input class="form-check-input" type="radio" name="sexo" id="sexoMasc"  th:field="*{sexo}" th:value="MASCULINO">
 								<label class="form-check-label" for="sexo">
 									Masculino
 								</label>
-								<input class="form-check-input" type="radio" name="sexo" id="sexo2">
+								<input class="form-check-input" type="radio" name="sexo" id="sexoFemi" th:field="*{sexo}" th:value="FEMININO" th:required="required">
 								<label class="form-check-label" for="sexo2">
 									Feminino</label>
 
@@ -78,11 +79,11 @@
 
 							<label for="tipoCliente" class="form-label">TipoCliente:</label>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente">
+								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente"  th:field="*{tipoCliente}" value="PESSOA_FISICA" th:required="required">
 								<label class="form-check-label" for="tipoCliente">
 									CPF
 								</label>
-								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente2">
+								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente2" th:field="*{tipoCliente}" value="PESSOA_JURIDICA">
 								<label class="form-check-label" for="tipoCliente2">
 									CNPJ
 								</label>
@@ -95,7 +96,7 @@
 							</label>
 							<div class="form-check form-switch">
 
-								<input class="form-check-input" type="checkbox" role="switch" id="ativo">
+								<input class="form-check-input" type="checkbox" role="switch" id="ativo" th:field="*{ativo}">
 								<label class="form-check-label" for="ativo">Ativo
 								</label>
 							</div>
