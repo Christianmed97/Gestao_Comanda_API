@@ -2,19 +2,9 @@ package br.edu.infnet.gestaocomanda;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
-
-import org.hibernate.internal.build.AllowSysOut;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import br.edu.infnet.gestaocomanda.model.Cliente;
 import br.edu.infnet.gestaocomanda.model.Comanda;
 import br.edu.infnet.gestaocomanda.model.TipoCLienteEnum;

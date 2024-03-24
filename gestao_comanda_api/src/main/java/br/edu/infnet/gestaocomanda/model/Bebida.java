@@ -1,11 +1,8 @@
 package br.edu.infnet.gestaocomanda.model;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,6 +14,7 @@ import lombok.ToString;
 @Table(name = "T_BEBIDA")
 @PrimaryKeyJoinColumn(name = "produto_id")
 public class Bebida extends Produto {
+		
 	@Getter
 	@Setter
 	private Boolean gelada;

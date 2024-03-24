@@ -2,10 +2,7 @@ package br.edu.infnet.gestaocomanda.service.impl;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
-
-import br.edu.infnet.gestaocomanda.model.Refeicao;
 import br.edu.infnet.gestaocomanda.model.Sobremesa;
 import br.edu.infnet.gestaocomanda.repository.SobremesaRepository;
 import br.edu.infnet.gestaocomanda.service.SobremesaService;
