@@ -66,6 +66,30 @@ public class ClienteController {
 		return "cliente/lista-Cliente";	
 	}
 	
+	@GetMapping("/findCliente")
+	public String procuraCliente(Model model,RedirectAttributes attributes) {
+		
+		model.addAttribute("clientes",model.getAttribute("clientesEncontrados"));
+	
+		return "cliente/procuraCliente";
+	}
+	
+	@PostMapping("/findCliente")
+	public String procuraCliente(Model model,Cliente cliente,String cpfCnpj,RedirectAttributes attributes) {
+		
+		Optional<Cliente> opCliente = clienteService.pesquisarPorCpfCnpj(cpfCnpj);
+		
+		try {
+			Cliente found = opCliente.get();
+			attributes.addFlashAttribute("clientesEncontrados",found);
+			
+		}catch(Exception ex) {
+			
+		}	
+		return "redirect:/cliente/findCliente";
+	}
+	
+	
 	
 
 }
