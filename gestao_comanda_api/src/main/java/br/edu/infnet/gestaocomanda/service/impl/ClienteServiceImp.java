@@ -85,8 +85,8 @@ public class ClienteServiceImp implements ClienteService {
 		List<Cliente> resultados = clienteRepository.findAll();
 		
 		return resultados.isEmpty()
-		? Optional.of(resultados)
-				: Optional.empty();
+				? Optional.empty()
+						: Optional.of(resultados);
 	}
 
 	@Override
