@@ -32,7 +32,7 @@
 		<!-- Navbar -->
 		<div th:replace="components/navbar.html"></div>
 		<div class="container-fluid">
-			<form role="form" action="#" th:method="post" th:action="@{cadastrar}" th:object="${refeicao}">
+			<form role="form" action="#" th:method="post" th:action="@{cadastrarRefeicao}" th:object="${refeicao}">
 				<fieldset class="form-group">
 					<legend>Refeiçao:</legend>
 					<label for="nome" class="form-label">Nome do prato:</label>
@@ -55,9 +55,37 @@
 					<button type="submit" class="btn btn-info">Cadastrar</button>
 					<button type="submit" class="btn btn-primary">Cancelar</button>
 				</fieldset>
+				</form>
+		</div>
+		
+		<div class="container-fluid">
+			<form role="form" action="#" th:method="post" th:action="@{cadastrarBebida}" th:object="${bebida}">
+				<fieldset class="form-group">
+					<legend>Bebida:</legend>
+					<label for="nome" class="form-label">Nome do prato:</label>
+					<input type="text" class="form-control" id="nome" aria-describedby="emailHelp"
+						th:required="required" th:field="*{nome}">
+					<label for="valor" class="form-label">Valor:</label>
+					<input type="text" class="form-control" id="valor" aria-describedby="emailHelp"
+						th:required="required" th:field="*{valor}">
+					<label for="tamanho" class="form-label">Tamanho:</label>
+					<input type="text" class="form-control" id="tamanho" aria-describedby="emailHelp"
+						th:required="required" th:field="*{tamanho}">
+					<p></p>
+					<input class="form-check-input" type="checkbox" role="switch" id="gelada" th:field="*{gelada}">
+					<label for="gelada" class="form-label">Gelada?</label>
+					<p></p>
+					<label for="marca" class="form-label">Marca:</label>
+					<input type="text" class="form-control" id="marca" aria-describedby="emailHelp"
+						th:required="required" th:field="*{marca}">
+					<p></p>
+					<button type="submit" class="btn btn-info">Cadastrar</button>
+					<button type="submit" class="btn btn-primary">Cancelar</button>
+				</fieldset>
+				</form>
 		</div>
 		</div>
-		</form>
+		
 		</div>
 		<!--   Core JS Files   -->
 		<script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 import br.edu.infnet.gestaocomanda.model.Bebida;
+import br.edu.infnet.gestaocomanda.model.Refeicao;
 import br.edu.infnet.gestaocomanda.repository.BebidaRepository;
 import br.edu.infnet.gestaocomanda.service.BebidaService;
 
@@ -30,8 +31,14 @@ public class BebidaServiceImpl implements BebidaService{
 		List<Bebida> resultados = bebidaRepository.findAll();
 		
 		return resultados.isEmpty()
-		? Optional.of(resultados)
-				: Optional.empty();
+		? Optional.empty()
+				: Optional.of(resultados);
+	}
+	
+	@Override
+	public Optional<Bebida> pesquisarPorCodigo(Long codigo) {
+		return bebidaRepository.findById(codigo);
+		
 	}
 	
 
