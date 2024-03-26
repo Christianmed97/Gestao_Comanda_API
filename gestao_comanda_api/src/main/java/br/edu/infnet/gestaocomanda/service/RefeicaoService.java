@@ -11,7 +11,7 @@ public interface RefeicaoService {
 	public Refeicao salvar (Refeicao refeicao)throws Exception ;
 	
 	public Optional<List<Refeicao>> pesquisarTodos();
-
-
+	
+	public Optional<Refeicao> pesquisarPorCodigo(Long codigo);
 
 }
