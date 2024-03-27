@@ -63,6 +63,9 @@ public class ClienteController {
 	public String add(Model model,Cliente cliente,RedirectAttributes redirect) {
 		
 		
+		cliente.setCpfCnpj(cliente.getCpfCnpj().replace(".",""));
+		cliente.setCpfCnpj(cliente.getCpfCnpj().replace("-",""));
+		cliente.setCpfCnpj(cliente.getCpfCnpj().replace("/",""));
 		try {
 			clienteService.salvar(cliente);
 		} catch (Exception e) {
@@ -87,7 +90,7 @@ public class ClienteController {
 		}catch(Exception e) {
 			
 			//throw new ClienteListarTodosException();
-			return "cliente/lista-Cliente";
+			return "redirect:cadastrar";
 		}	
 		return "cliente/lista-Cliente";	
 	}
