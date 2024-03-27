@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -61,6 +62,7 @@ public class ClienteController {
 	@PostMapping("/cadastrar")
 	public String add(Model model,Cliente cliente,RedirectAttributes redirect) {
 		
+		
 		try {
 			clienteService.salvar(cliente);
 		} catch (Exception e) {
@@ -88,6 +90,31 @@ public class ClienteController {
 			return "redirect:cadastrar";
 		}	
 		return "cliente/lista-Cliente";	
+	}
+	
+	
+	@GetMapping("/editarCliente/{cpfCnpj}")
+	public String editarCliente(@PathVariable("cpfCnpj") String cpfCnpj,Model model,Cliente cliente) {
+		
+		Cliente clienteFound = clienteService.pesquisarPorCpfCnpj(cpfCnpj).get();
+		
+		model.addAttribute("cliente",clienteFound);
+		
+		return "cliente/editarCliente";
+	}
+	
+	@PostMapping("/editarCliente")
+	public String editarCliente(Model model,Cliente cliente) {
+		
+		try{
+			clienteService.salvar(cliente);
+			return "redirect:/cliente/findCliente";
+		}catch(Exception e) {
+			return "redirect:../home";
+		}
+	
+		
+		
 	}
 	
 	

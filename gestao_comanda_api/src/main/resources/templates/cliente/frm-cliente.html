@@ -24,6 +24,10 @@
 	<!-- Nepcha Analytics (nepcha.com) -->
 	<!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
 	<script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -45,10 +49,25 @@
 						</div>
 					</div>
 					<div class="row">
+						<div class="col-4">
+							<label for="tipoCliente" class="form-label">TipoCliente:</label>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente"  th:field="*{tipoCliente}" value="PESSOA_FISICA" th:required="required">
+								<label class="form-check-label" for="tipoCliente">
+									CPF
+								</label>
+								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente2" th:field="*{tipoCliente}" value="PESSOA_JURIDICA">
+								<label class="form-check-label" for="tipoCliente2">
+									CNPJ
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-12">
 							<div class="mb-3">
 								<label for="cpf/cnpj" class="form-label">CPF/CNPJ:</label>
-								<input type="text" class="form-control" id="cpf/cnpj" aria-describedby="emailHelp" th:required="required" th:field="*{cpfCnpj}">
+								<input type="text" class="form-control" aria-describedby="emailHelp" th:required="required" th:field="*{cpfCnpj}">
 							</div>
 						</div>
 					</div>
@@ -75,22 +94,7 @@
 
 							</div>
 						</div>
-						<div class="col-4">
-
-							<label for="tipoCliente" class="form-label">TipoCliente:</label>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente"  th:field="*{tipoCliente}" value="PESSOA_FISICA" th:required="required">
-								<label class="form-check-label" for="tipoCliente">
-									CPF
-								</label>
-								<input class="form-check-input" type="radio" name="tipoCliente" id="tipoCliente2" th:field="*{tipoCliente}" value="PESSOA_JURIDICA">
-								<label class="form-check-label" for="tipoCliente2">
-									CNPJ
-								</label>
-
-							</div>
-
-						</div>
+						
 						<div class="col-4">
 							<label class="form-check-label" for="ativo">Status:
 							</label>
@@ -122,7 +126,26 @@
 		<script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
 		<script th:src="@{assets/js/core/popper.min.js}"></script>
 		<script th:src="@{/assets/js/core/bootstrap.min.js}"></script>
+		<script th:src="@{/assets/js/jquery.mask.min.js}"></script>
+		<script th:inline="javascript">
+	/*<![CDATA[*/
 
+		$(document).ready(function() {
+		    document.querySelectorAll('input[name="tipoCliente"]').forEach(function(radio) {
+		        radio.addEventListener('change', function() {
+		            if (this.value === 'PESSOA_FISICA') {        
+		                $('#cpfCnpj').mask('000.000.000-00', {reverse: true});
+		              
+		            } else {
+		                $('#cpfCnpj').mask('00.000.000/0000-00', {reverse: true});       
+		               
+		            }
+		        });
+		    });
+		});
+	   
+	/*]]>*/
+</script>
 		<!-- Github buttons -->
 		<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 </body>
