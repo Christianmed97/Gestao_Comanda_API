@@ -3,6 +3,8 @@ package br.edu.infnet.gestaocomanda.service.impl;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
+
+import br.edu.infnet.gestaocomanda.model.Refeicao;
 import br.edu.infnet.gestaocomanda.model.Sobremesa;
 import br.edu.infnet.gestaocomanda.repository.SobremesaRepository;
 import br.edu.infnet.gestaocomanda.service.SobremesaService;
@@ -29,11 +31,15 @@ private SobremesaRepository sobremesaRepository;
 		List<Sobremesa> resultados = sobremesaRepository.findAll();
 		
 		return resultados.isEmpty()
-		? Optional.of(resultados)
-				: Optional.empty();
+		? Optional.empty()
+				: Optional.of(resultados);
 	}
 	
-
+	@Override
+	public Optional<Sobremesa> pesquisarPorCodigo(Long codigo) {
+		return sobremesaRepository.findById(codigo);
+		
+	}
 	
 	
 	

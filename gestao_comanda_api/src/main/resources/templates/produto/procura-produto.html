@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" th:href="@{/assets/img/apple-icon.png}">
     <link rel="icon" type="image/png" th:href="@{/assets/img/favicon.png}">
     <title>
-        Gestão comanda - Lista Clientes
+        Gestão comanda
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -30,15 +30,28 @@
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 <!-- Navbar -->
 <div th:replace="components/navbar.html"></div>
-
-<div class="container-fluid py-4">
+<div>
+	<div class="container-fluid py-4">
 		<div class="col-12">
 			<div class="card my-4">
-				<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                    <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    	<h6 class="text-black text-capitalize ps-3">Produtos</h6>
-                    </div>
-                </div>
+				<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                    	<h6 class="text-black text-capitalize ps-3">Procura Produtos</h6>
+                 </div>
+			</div>
+			 <form style="margin-top: 10px" role="form" action="#" th:method="post" th:action="@{procuraProduto}" th:object="${produto}"?>
+				<div class="row">
+					<div class="col-2">	
+						<div class=" mb-3" >
+                                <label for="codigoProduto" class="form-label"  id="codigoProduto">Codigo:</label>
+                                <input type="text" th:name="${'codigo'}"  id="codigoProduto" class="form-control" th:required="required">
+                         </div>
+					</div>
+				</div> 
+				 
+				 <div class="text-center">
+                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-60 mt-4 mb-0">Buscar</button>
+                 </div>
+			 </form>
 			<div class="card-body px-0 pb-2">
 				<div class="table-responsive p-0">
 					<table class="table align-items-center mb-0">
@@ -69,13 +82,16 @@
 						</tbody>
 					</table>
 				</div>
-			</div>		
+			</div>	
+			
+			
 		</div>
 	</div>
-</div>	
+</div>
 
-
-
+<div>
+	
+</div>
 <!--   Core JS Files   -->
 		<script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
 		<script th:src="@{assets/js/core/popper.min.js}"></script>

@@ -35,86 +35,15 @@
 		<div class="col-12">
 			<div class="card my-4">
 				<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    	<h6 class="text-black text-capitalize ps-3">Procura Refeições</h6>
-                 </div>
-			</div>
-			 <form style="margin-top: 10px" role="form" action="#" th:method="post" th:action="@{procuraRefeicao}" th:object="${refeicao}"?>
-				<div class="row">
-					<div class="col-2">	
-						<div class=" mb-3" >
-                                <label for="codigoRefeicao" class="form-label"  id="codigoRefeicao">Codigo:</label>
-                                <input type="text" th:name="${'codigo'}"  id="codigoRefeicao" class="form-control" th:required="required">
-                         </div>
-					</div>
-				</div> 
-				 
-				 <div class="text-center">
-                            <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-60 mt-4 mb-0">Buscar</button>
-                 </div>
-			 </form>
-			<div class="card-body px-0 pb-2">
-				<div class="table-responsive p-0">
-					<table class="table align-items-center mb-0">
-						<thead>
-							<tr>
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Codigo</th>
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome</th>
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Valor</th>
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Peso</th>					
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vegano</th>
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ingredientes</th>				
-							</tr>
-						</thead>
-						<tbody>
-								  	<tr th:each="refeicao : ${refeicao}">
-								 <td>
-                                	<div class="d-flex px-2 py-1">
-                                    	<div class="d-flex flex-column justify-content-center">
-                                        	<h6 class="mb-0 text-sm" th:text="${refeicao.codigo}"></h6>
-                                        </div>
-                                     </div>
-                               </td>
-                               <td>
-								   <p class="text-xs font-weight-bold mb-0" th:text="${refeicao.nome}"></p>
-							   </td>
-                               <td>
-								   <p class="text-xs font-weight-bold mb-0" th:text="${refeicao.valor}"></p>
-							   </td>						   
-							   <td>
-								   <p class="text-xs font-weight-bold mb-0" th:text="${refeicao.peso}"></p>
-							   </td>
-							   <td>
-								   <p class="text-xs font-weight-bold mb-0" th:text="${refeicao.vegano}"></p>
-							   </td>							 
-							   <td>
-								   <p class="text-xs font-weight-bold mb-0" th:text="${refeicao.ingredientes}"></p>
-							   </td>  
-							 </tr>	
-
-						</tbody>
-					</table>
-				</div>
-			</div>	
-			
-			
-		</div>
-	</div>
-</div>
-
-<div>
-	<div class="container-fluid py-4">
-		<div class="col-12">
-			<div class="card my-4">
-				<div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                     	<h6 class="text-black text-capitalize ps-3">Procura Bebidas</h6>
                  </div>
 			</div>
-			 <form style="margin-top: 10px" role="form" action="#" th:method="post" th:action="@{procuraBebidas}" th:object="${bebida}"?>
+			 <form style="margin-top: 10px" role="form" action="#" th:method="post" th:action="@{procuraBebida}" th:object="${bebida}"?>
 				<div class="row">
 					<div class="col-2">	
 						<div class=" mb-3" >
-                                <label for="codigoBebidas" class="form-label"  id="codigoBebidas">Codigo:</label>
-                                <input type="text" th:name="${'codigo'}"  id="codigoBebidas" class="form-control" th:required="required">
+                                <label for="codigoBebidas" class="form-label"  id="codigoBebida">Codigo:</label>
+                                <input type="text" th:name="${'codigo'}"  id="codigoBebida" class="form-control" th:required="required">
                          </div>
 					</div>
 				</div> 

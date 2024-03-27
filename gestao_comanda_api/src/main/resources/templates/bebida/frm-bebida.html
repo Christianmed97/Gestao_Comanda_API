@@ -32,37 +32,10 @@
 		<!-- Navbar -->
 		<div th:replace="components/navbar.html"></div>
 		<div class="container-fluid">
-			<form role="form" action="#" th:method="post" th:action="@{cadastrarRefeicao}" th:object="${refeicao}">
-				<fieldset class="form-group">
-					<legend>Refeiçao:</legend>
-					<label for="nome" class="form-label">Nome do prato:</label>
-					<input type="text" class="form-control" id="nome" aria-describedby="emailHelp"
-						th:required="required" th:field="*{nome}">
-					<label for="valor" class="form-label">Valor:</label>
-					<input type="text" class="form-control" id="valor" aria-describedby="emailHelp"
-						th:required="required" th:field="*{valor}">
-					<label for="peso" class="form-label">Peso:</label>
-					<input type="text" class="form-control" id="peso" aria-describedby="emailHelp"
-						th:required="required" th:field="*{peso}">
-					<p></p>
-					<input class="form-check-input" type="checkbox" role="switch" id="vegano" th:field="*{vegano}">
-					<label for="vegano" class="form-label">Vegano?</label>
-					<p></p>
-					<label for="ingredientes" class="form-label">Ingredientes:</label>
-					<input type="text" class="form-control" id="ingredientes" aria-describedby="emailHelp"
-						th:required="required" th:field="*{ingredientes}">
-					<p></p>
-					<button type="submit" class="btn btn-info">Cadastrar</button>
-					<button type="submit" class="btn btn-primary">Cancelar</button>
-				</fieldset>
-				</form>
-		</div>
-		
-		<div class="container-fluid">
 			<form role="form" action="#" th:method="post" th:action="@{cadastrarBebida}" th:object="${bebida}">
 				<fieldset class="form-group">
-					<legend>Bebida:</legend>
-					<label for="nome" class="form-label">Nome do prato:</label>
+					<legend>Bebidas:</legend>
+					<label for="nome" class="form-label">Nome da bebida:</label>
 					<input type="text" class="form-control" id="nome" aria-describedby="emailHelp"
 						th:required="required" th:field="*{nome}">
 					<label for="valor" class="form-label">Valor:</label>

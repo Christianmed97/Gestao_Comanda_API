@@ -30,13 +30,12 @@
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 <!-- Navbar -->
 <div th:replace="components/navbar.html"></div>
-
 <div class="container-fluid py-4">
 		<div class="col-12">
 			<div class="card my-4">
 				<div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    	<h6 class="text-black text-capitalize ps-3">Produtos</h6>
+                    	<h6 class="text-black text-capitalize ps-3">Sobremesas</h6>
                     </div>
                 </div>
 			<div class="card-body px-0 pb-2">
@@ -46,24 +45,36 @@
 							<tr>
 								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Codigo</th>
 								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome</th>
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Valor</th>				
+								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Valor</th>
+								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Informação</th>					
+								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Doce</th>
+								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quantidade</th>				
 							</tr>
 						</thead>
 						<tbody>
-								  	<tr th:each="produto : ${produto}">
+								  	<tr th:each="sobremesa : ${sobremesa}">
 								 <td>
                                 	<div class="d-flex px-2 py-1">
                                     	<div class="d-flex flex-column justify-content-center">
-                                        	<h6 class="mb-0 text-sm" th:text="${produto.codigo}"></h6>
+                                        	<h6 class="mb-0 text-sm" th:text="${sobremesa.codigo}"></h6>
                                         </div>
                                      </div>
                                </td>
                                <td>
-								   <p class="text-xs font-weight-bold mb-0" th:text="${produto.nome}"></p>
+								   <p class="text-xs font-weight-bold mb-0" th:text="${sobremesa.nome}"></p>
 							   </td>
                                <td>
-								   <p class="text-xs font-weight-bold mb-0" th:text="${produto.valor}"></p>
+								   <p class="text-xs font-weight-bold mb-0" th:text="${sobremesa.valor}"></p>
+							   </td>						   
+							   <td>
+								   <p class="text-xs font-weight-bold mb-0" th:text="${sobremesa.informacao}"></p>
 							   </td>
+							   <td>
+								   <p class="text-xs font-weight-bold mb-0" th:text="${sobremesa.doce}"></p>
+							   </td>							 
+							   <td>
+								   <p class="text-xs font-weight-bold mb-0" th:text="${sobremesa.quantidade}"></p>
+							   </td>  
 							 </tr>	
 
 						</tbody>

@@ -66,6 +66,18 @@
 				
 				<!-- INICO SUMBMENU Produtos -->
 				<ul id="produtosSubmenu" class="collapse list-unstyled">
+					<ul id="produtosSubmenu" class="collapse list-unstyled">
+							<li class="nav-item">
+								  <a class="nav-link text-white" th:href="@{/produto/listaProduto}">
+									   <span class="nav-link-text ms-1">Listar Produtos</span>
+								  </a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link text-white" th:href="@{/produto/procuraProduto}">
+									   <span class="nav-link-text ms-1">Procurar Produtos</span>
+								  </a>
+							</li>
+						  </ul>		
 					<li class="nav-item">
 						<a class="nav-link text-white" data-bs-toggle="collapse" href="#refeicaoSubmenu">
 							<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -75,17 +87,17 @@
 						</a>						  
 						  <ul id="refeicaoSubmenu" class="collapse list-unstyled">
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/refeicao/cadastrar}">
 									   <span class="nav-link-text ms-1">Cadastrar Refeições</span>
 								  </a>
 							</li>
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/refeicao/listaRefeicao}">
 									   <span class="nav-link-text ms-1">Listar Refeições</span>
 								  </a>
 							</li>
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/refeicao/procuraRefeicao}">
 									   <span class="nav-link-text ms-1">Procurar Refeição</span>
 								  </a>
 							</li>
@@ -100,17 +112,17 @@
 						</a>						  
 						  <ul id="bebidaSubmenu" class="collapse list-unstyled">
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/bebida/cadastrar}">
 									   <span class="nav-link-text ms-1">Cadastrar Bebidas</span>
 								  </a>
 							</li>
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/bebida/listaBebida}">
 									   <span class="nav-link-text ms-1">Listar Bebidas</span>
 								  </a>
 							</li>
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/bebida/procuraBebida}">
 									   <span class="nav-link-text ms-1">Procurar Bebida</span>
 								  </a>
 							</li>
@@ -122,21 +134,21 @@
 							<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
 								<i class="material-icons opacity-10">groups</i>
 							</div>
-							<span class="nav-link-text ms-1">Menu Bebida</span>
+							<span class="nav-link-text ms-1">Menu Sobremesa</span>
 						</a>						  
 						  <ul id="sobremesaSubmenu" class="collapse list-unstyled">
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/sobremesa/cadastrar}">
 									   <span class="nav-link-text ms-1">Cadastrar Sobremesas</span>
 								  </a>
 							</li>
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/sobremesa/listaSobremesa}">
 									   <span class="nav-link-text ms-1">Listar Sobremesas</span>
 								  </a>
 							</li>
 							<li class="nav-item">
-								  <a class="nav-link text-white" href="#">
+								  <a class="nav-link text-white" th:href="@{/sobremesa/procuraSobremesa}">
 									   <span class="nav-link-text ms-1">Procurar Sobremesa</span>
 								  </a>
 							</li>
