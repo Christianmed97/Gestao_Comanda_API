@@ -87,7 +87,7 @@ public class ClienteController {
 		}catch(Exception e) {
 			
 			//throw new ClienteListarTodosException();
-			return "redirect:cadastrar";
+			return "cliente/lista-Cliente";
 		}	
 		return "cliente/lista-Cliente";	
 	}

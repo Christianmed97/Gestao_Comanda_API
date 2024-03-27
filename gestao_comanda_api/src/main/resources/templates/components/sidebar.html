@@ -29,7 +29,7 @@
 			
 			<!-- INICO MENU CLIENTES -->
 			<li class="nav-item">
-				<a class="dropdown-toggle nav-link text-white" data-bs-toggle="collapse" href="#clienteSubmenu">
+				<a class="nav-link text-white" data-bs-toggle="collapse" href="#clienteSubmenu">
 					<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
 						<i class="material-icons opacity-10">groups</i>
 					</div>
@@ -39,15 +39,15 @@
 				<!-- INICO SUMBMENU CLIENTES -->
 				<ul id="clienteSubmenu" class="collapse list-unstyled">
 					<li class="nav-item">
-						  <a class="nav-link text-white">
+						  <a class="nav-link text-white" th:href="@{/cliente/cadastrar}">
 							   <span class="nav-link-text ms-1">Cadastrar</span>
 						  </a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="#">Editar</a>
-					</li>
+						<a class="nav-link text-white" th:href="@{/cliente/findCliente}">Localizar Cliente</a>
+					</li>		
 					<li class="nav-item">
-						<a class="nav-link text-white" href="#">Pesquisar</a>
+						<a class="nav-link text-white" th:href="@{/cliente/listaClientes}">Listar Clientes</a>
 					</li>
 				</ul>
 				<!-- FINAL SUMBMENU CLIENTES -->
@@ -56,7 +56,98 @@
 			<!-- FINAL MENU CLIENTES -->
 			
 			<!-- INICIO MENU PRODUTOS -->
-			<!--  CODIGO AQUI -->
+			<li class="nav-item">
+				<a class="nav-link text-white" data-bs-toggle="collapse" href="#produtosSubmenu">
+					<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+						<i class="material-icons opacity-10">groups</i>
+					</div>
+					<span class="nav-link-text ms-1">Produtos</span>
+				</a>
+				
+				<!-- INICO SUMBMENU Produtos -->
+				<ul id="produtosSubmenu" class="collapse list-unstyled">
+					<li class="nav-item">
+						<a class="nav-link text-white" data-bs-toggle="collapse" href="#refeicaoSubmenu">
+							<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+								<i class="material-icons opacity-10">groups</i>
+							</div>
+							<span class="nav-link-text ms-1">Menu Refeição</span>
+						</a>						  
+						  <ul id="refeicaoSubmenu" class="collapse list-unstyled">
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Cadastrar Refeições</span>
+								  </a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Listar Refeições</span>
+								  </a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Procurar Refeição</span>
+								  </a>
+							</li>
+						  </ul>						  
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" data-bs-toggle="collapse" href="#bebidaSubmenu">
+							<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+								<i class="material-icons opacity-10">groups</i>
+							</div>
+							<span class="nav-link-text ms-1">Menu Bebida</span>
+						</a>						  
+						  <ul id="bebidaSubmenu" class="collapse list-unstyled">
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Cadastrar Bebidas</span>
+								  </a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Listar Bebidas</span>
+								  </a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Procurar Bebida</span>
+								  </a>
+							</li>
+						  </ul>
+						  
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" data-bs-toggle="collapse" href="#sobremesaSubmenu">
+							<div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+								<i class="material-icons opacity-10">groups</i>
+							</div>
+							<span class="nav-link-text ms-1">Menu Bebida</span>
+						</a>						  
+						  <ul id="sobremesaSubmenu" class="collapse list-unstyled">
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Cadastrar Sobremesas</span>
+								  </a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Listar Sobremesas</span>
+								  </a>
+							</li>
+							<li class="nav-item">
+								  <a class="nav-link text-white" href="#">
+									   <span class="nav-link-text ms-1">Procurar Sobremesa</span>
+								  </a>
+							</li>
+						  </ul>
+						  
+					</li>
+				</ul>
+				
+				<!-- FINAL SUMBMENU CLIENTES -->
+				
+			</li>
 			<!-- FINAL MENU PRODUTOS -->
 			
 			<!-- INICIO MENU PEDIDOS -->
