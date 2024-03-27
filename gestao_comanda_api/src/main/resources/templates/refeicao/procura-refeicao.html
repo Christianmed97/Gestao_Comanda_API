@@ -62,7 +62,8 @@
 								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Valor</th>
 								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Peso</th>					
 								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vegano</th>
-								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ingredientes</th>				
+								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ingredientes</th>
+								<th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ações</th>				
 							</tr>
 						</thead>
 						<tbody>
@@ -89,6 +90,20 @@
 							   <td>
 								   <p class="text-xs font-weight-bold mb-0" th:text="${refeicao.ingredientes}"></p>
 							   </td>  
+							   <div class="row">
+									<div class="col-1">
+										<td>
+											<div class="text-center me-2 d-flex align-items-center justify-content-center">
+                       							<a th:href="@{/refeicao/editarRefeicao/{codigo}(codigo=${refeicao.codigo})}">
+                       							<i class="material-icons opacity-10">edit</i> </a>
+                       						</div>
+                       						<div class="text-center me-2 d-flex align-items-center justify-content-center">
+                       							<a th:href="@{/refeicao/deletarRefeicao/{codigo}(codigo=${refeicao.codigo})}">
+                       							<i class="material-icons opacity-10">delete</i> </a>
+                       						</div>
+                     					</td>
+									</div>									 					   	
+								</div>		   
 							 </tr>	
 
 						</tbody>

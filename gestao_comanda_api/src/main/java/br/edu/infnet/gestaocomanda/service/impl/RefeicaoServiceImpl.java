@@ -41,6 +41,13 @@ private RefeicaoRepository refeicaoRepository;
 		return refeicaoRepository.findById(codigo);
 		
 	}
-	
+	@Override
+	public Refeicao atualizar(Refeicao refeicao)throws Exception{
+		return refeicaoRepository.save(refeicao);
+	}
+	@Override
+	public void deletar(Refeicao refeicao)throws Exception{
+		refeicaoRepository.delete(refeicao);
+	}
 	
 }

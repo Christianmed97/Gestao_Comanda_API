@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.edu.infnet.gestaocomanda.exception.ProdutoListarTodosException;
+import br.edu.infnet.gestaocomanda.model.Cliente;
 import br.edu.infnet.gestaocomanda.model.Refeicao;
 import br.edu.infnet.gestaocomanda.service.RefeicaoService;
 
@@ -51,6 +53,8 @@ public class RefeicaoController {
 		}	
 		return "redirect:/refeicao/procuraRefeicao";
 	}
+	
+	
 	@PostMapping("/cadastrarRefeicao")
 	public String add(Model model,Refeicao refeicao,RedirectAttributes redirect) {
 		try {
@@ -78,6 +82,36 @@ public class RefeicaoController {
 		return "refeicao/lista-refeicao";
 	}
 	
-	
+	@GetMapping("/editarRefeicao/{codigo}")
+	public String editarRefeicao(@PathVariable("codigo") Long codigo,Model model) {
+		
+		Refeicao refeicaoEncontrada = refeicaoService.pesquisarPorCodigo(codigo).get();
+		
+		model.addAttribute("refeicao",refeicaoEncontrada);
+		
+		return "refeicao/editar-refeicao";
+	}
 
+	@PostMapping("/editarRefeicao")
+	public String editarRefeicao(Model model,Refeicao refeicao) {
+		
+		try{
+			refeicaoService.salvar(refeicao);
+			return "redirect:/refeicao/procuraRefeicao";
+		}catch(Exception e) {
+			return "redirect:../home";
+		}
+	}
+	@GetMapping("/deletarRefeicao/{codigo}")
+	public String deletarRefeicao(@PathVariable("codigo") Long codigo,Model model) {
+		
+		try{
+			Refeicao refeicaoEncontrada = refeicaoService.pesquisarPorCodigo(codigo).get();
+			refeicaoService.deletar(refeicaoEncontrada);
+			return "redirect:/refeicao/procuraRefeicao";
+		}catch(Exception e) {
+			return "redirect:../home";
+		}
+	}
+	
 }
